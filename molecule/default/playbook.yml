@@ -1,0 +1,15 @@
+---
+- name: Converge
+  hosts: all
+  become: true
+  roles:
+    - role: freehck.mkdir
+      mkdir_directories:
+        - path: /data/dir1
+          owner: root
+          group: root
+          state: present
+          recurse: true
+        - path: /data/dir2
+        - /data/dir3
+  post_tasks:

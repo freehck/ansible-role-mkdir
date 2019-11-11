@@ -1,0 +1,7 @@
+---
+mkdir_directories: []
+mkdir_default_owner: root
+mkdir_default_group: root
+mkdir_default_mode: '0755'
+mkdir_default_state: present
+mkdir_default_recurse: true

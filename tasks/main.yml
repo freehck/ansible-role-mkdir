@@ -1,0 +1,10 @@
+---
+
+- name: create directory
+  file:
+    path: "{{ item.path if item is mapping else item }}"
+    owner: "{{ item.owner | default( mkdir_default_owner ) }}"
+    group: "{{ item.group | default( mkdir_default_group ) }}"
+    state: "{{ 'directory' if item.state | default( mkdir_default_state ) == 'present' else 'absent' }}"
+    recurse: "{{ item.recurse | default( mkdir_default_recurse ) }}"
+  loop: "{{ mkdir_directories | flatten(levels=1) }}"
