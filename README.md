@@ -57,6 +57,11 @@ This role can be installed from [Ansible Galaxy](https://galaxy.ansible.com/):
 
 `ansible-galaxy install freehck.mkdir`
 
+Known issues
+------------
+
+1. `recurse: true` that is the default in this role, leads the job status to be always `changed`: https://github.com/ansible/ansible/issues/32636
+
 License
 -------
 
